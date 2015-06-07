@@ -36,7 +36,7 @@ func main() {
 	}
 
 	http.HandleFunc("/", func(res http.ResponseWriter, req *http.Request) {
-		mask, err := randomMask(images)
+		mask := randomMask(images)
 		avatar := identico.Classic(mask, colorful.WarmColor(), colorful.HappyColor())
 		err = png.Encode(res, avatar)
 		if err != nil {
@@ -77,7 +77,7 @@ func loadImages(path string) ([]image.Image, error) {
 	return images, nil
 }
 
-func randomMask(images []image.Image) (image.Image, error) {
+func randomMask(images []image.Image) image.Image {
 	i := rand.Intn(len(images) - 1)
-	return images[i], nil
+	return images[i]
 }
