@@ -2,7 +2,7 @@
 
 Server that generates a random thematic avatar based on image masks.
 
-Check [identico.go](git@github.com:luizbranco/pokerface.git) to see how the final image is assembled and [go-colorful](https://github.com/lucasb-eyer/go-colorful) for cool random colors.
+Check [identico](https://github.com/luizbranco/identico) to see how the final image is assembled and [go-colorful](https://github.com/lucasb-eyer/go-colorful) for cool random colors.
 
 ## Examples
 
