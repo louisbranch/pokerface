@@ -35,7 +35,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-	http.HandleFunc("/", func(res http.ResponseWriter, req *http.Request) {
+	http.HandleFunc("/identicon.png", func(res http.ResponseWriter, req *http.Request) {
 		mask := randomMask(images)
 		avatar := identico.Classic(mask, colorful.WarmColor(), colorful.HappyColor())
 		err = png.Encode(res, avatar)
