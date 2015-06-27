@@ -19,7 +19,7 @@ import (
 
 var (
 	dir  = flag.String("images-dir", "./images", "Images directory")
-	port = flag.String("port", ":8080", "Server port")
+	port = flag.String("port", "8080", "Server port")
 )
 
 func init() {
@@ -45,7 +45,7 @@ func main() {
 		}
 	})
 
-	log.Fatal(http.ListenAndServe(*port, nil))
+	log.Fatal(http.ListenAndServe(":"+*port, nil))
 }
 
 func loadImages(path string) ([]image.Image, error) {
